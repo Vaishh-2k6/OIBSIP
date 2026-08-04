@@ -1,0 +1,11 @@
+.strength-meter span.active {
+  background: linear-gradient(90deg, #ff9f43, #ff6b6b);
+}
+
+.strength-meter span.active:nth-child(2) {
+  background: linear-gradient(90deg, #f7b731, #ff8c00);
+}
+
+.strength-meter span.active:nth-child(3) {
+  background: linear-gradient(90deg, #45b36b, #2ecc71);
+}

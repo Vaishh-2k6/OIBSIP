@@ -1,0 +1,308 @@
+:root {
+  color-scheme: light;
+  --bg: #fff0f6;
+  --card: rgba(255, 245, 253, 0.92);
+  --primary: #d175b8;
+  --primary-dark: #b3448f;
+  --accent: #f8b6d1;
+  --success: #62a67a;
+  --text: #493047;
+  --muted: #8b6c84;
+  --border: #f4d6e8;
+  --shadow: 0 20px 45px rgba(173, 105, 142, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #fff4fb;
+  background-image: url('assets/pink-floral-bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--text);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  display: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.app-card {
+  width: min(760px, 100%);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 204, 228, 0.9);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 2.4vw, 2.35rem);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.header-badge {
+  background: linear-gradient(135deg, rgba(255, 207, 232, 0.92), rgba(255, 239, 247, 0.92));
+  color: var(--primary-dark);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 10px 20px rgba(241, 184, 210, 0.25);
+}
+
+.task-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.task-form input {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.9);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(209, 118, 170, 0.18);
+}
+
+.task-form button,
+.task-actions button {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-form button {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(209, 118, 170, 0.25);
+}
+
+.task-form button:hover,
+.task-actions button:hover {
+  transform: translateY(-1px);
+}
+
+.task-section {
+  margin-top: 18px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.section-header h2 {
+  font-size: 1rem;
+}
+
+.count-pill {
+  background: rgba(249, 199, 227, 0.28);
+  color: var(--primary-dark);
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.completed-pill {
+  background: rgba(184, 225, 205, 0.28);
+  color: var(--success);
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.task-item {
+  border: 1px solid var(--border);
+  padding: 14px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.task-item.completed {
+  background: rgba(246, 250, 241, 0.9);
+  border-color: rgba(98, 166, 122, 0.25);
+}
+
+.task-item.editing {
+  border-color: rgba(124, 111, 242, 0.45);
+  box-shadow: inset 0 0 0 1px rgba(124, 111, 242, 0.2);
+}
+
+.task-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.task-toggle {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--success);
+  cursor: pointer;
+}
+
+.task-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-text {
+  display: block;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.task-item.completed .task-text {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.task-meta {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 6px;
+}
+
+.edit-input {
+  width: 100%;
+  border: 1px solid rgba(124, 111, 242, 0.35);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.edit-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(124, 111, 242, 0.15);
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.edit-btn {
+  background: rgba(209, 118, 170, 0.16);
+  color: var(--primary-dark);
+}
+
+.delete-btn {
+  background: rgba(255, 158, 191, 0.18);
+  color: #a53f61;
+}
+
+.save-btn {
+  background: #7bc192;
+  color: white;
+}
+
+.cancel-btn {
+  background: #f8edf7;
+  color: var(--muted);
+}
+
+.empty-state {
+  border: 1px dashed var(--border);
+  color: var(--muted);
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  background: #fcfbff;
+}
+
+@media (max-width: 640px) {
+  .app-card {
+    padding: 20px;
+  }
+
+  .app-header {
+    flex-direction: column;
+  }
+
+  .task-form {
+    flex-direction: column;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-actions {
+    justify-content: flex-end;
+  }
+}

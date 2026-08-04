@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bloom Tasks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="app-card">
+        <header class="app-header">
+          <div>
+            <p class="eyebrow">Daily Focus</p>
+            <h1>Bloom Tasks</h1>
+            <p class="subtitle">Organise your day with calm, clear momentum.</p>
+          </div>
+          <div class="header-badge">✨ Fresh start</div>
+        </header>
+
+        <form id="taskForm" class="task-form">
+          <input
+            id="taskInput"
+            type="text"
+            maxlength="120"
+            placeholder="What needs your attention today?"
+            autocomplete="off"
+            required
+          />
+          <button type="submit">Add Task</button>
+        </form>
+
+        <section class="task-section">
+          <div class="section-header">
+            <h2>Pending Tasks</h2>
+            <span id="pendingCount" class="count-pill">0 pending</span>
+          </div>
+          <ul id="pendingList" class="task-list"></ul>
+        </section>
+
+        <section class="task-section">
+          <div class="section-header">
+            <h2>Completed Tasks</h2>
+            <span id="completedCount" class="count-pill completed-pill">0 completed</span>
+          </div>
+          <ul id="completedList" class="task-list"></ul>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

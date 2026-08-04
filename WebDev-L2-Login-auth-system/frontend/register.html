@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaishnavi's Authentication System | Register</title>
+    <script>
+      if (window.location.protocol === 'file:') {
+        const page = window.location.pathname.split('/').pop() || 'register.html';
+        const target = page === 'index.html' ? '/' : '/' + page;
+        window.location.href = 'http://127.0.0.1:3000' + target;
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/register.css" />
+  </head>
+  <body>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">V</div>
+          <span>Vaishnavi's Authentication System</span>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="toggle-icon">☀️</span>
+        </button>
+      </header>
+
+      <main class="auth-card">
+        <section class="form-panel">
+          <div class="form-card">
+            <div class="form-head">
+              <h2>Create account</h2>
+              <p>Join the experience in a few simple steps</p>
+            </div>
+
+            <form id="registerForm" novalidate>
+              <div class="input-group">
+                <label for="username">Username</label>
+                <div class="input-shell">
+                  <span class="input-icon">👤</span>
+                  <input id="username" name="username" type="text" placeholder="" required />
+                </div>
+                <small class="helper-text" data-error-for="username"></small>
+              </div>
+
+              <div class="input-group">
+                <label for="email">Email</label>
+                <div class="input-shell">
+                  <span class="input-icon">✉️</span>
+                  <input id="email" name="email" type="email" placeholder="" required />
+                </div>
+                <small class="helper-text" data-error-for="email"></small>
+              </div>
+
+              <div class="input-group">
+                <label for="password">Password</label>
+                <div class="input-shell">
+                  <span class="input-icon">🔒</span>
+                  <input id="password" name="password" type="password" placeholder="" required />
+                  <button type="button" class="toggle-password" data-target="password">Show</button>
+                </div>
+                <div class="strength-meter" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+                <small class="helper-text" data-error-for="password"></small>
+              </div>
+
+              <div class="input-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <div class="input-shell">
+                  <span class="input-icon">🔐</span>
+                  <input id="confirmPassword" name="confirmPassword" type="password" placeholder="" required />
+                  <button type="button" class="toggle-password" data-target="confirmPassword">Show</button>
+                </div>
+                <small class="helper-text" data-error-for="confirmPassword"></small>
+              </div>
+
+              <button class="primary-btn" type="submit" id="registerButton">
+                <span class="btn-text">Create account</span>
+                <span class="spinner" hidden></span>
+              </button>
+            </form>
+
+            <div class="switch-link">
+              <p>Already have an account? <a href="/index.html">Log in</a></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="hero-panel">
+          <div class="hero-content">
+            <p class="eyebrow">Crafted for modern teams</p>
+            <h1>Build confidence with every sign-up.</h1>
+            <p>Fast validation, secure password handling, and a premium experience from the first click.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="/js/api.js"></script>
+    <script src="/js/register.js"></script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaishnavi's Authentication System | Dashboard</title>
+    <script>
+      if (window.location.protocol === 'file:') {
+        const page = window.location.pathname.split('/').pop() || 'dashboard.html';
+        const target = page === 'index.html' ? '/' : '/' + page;
+        window.location.href = 'http://127.0.0.1:3000' + target;
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+  </head>
+  <body>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <div class="dashboard-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">V</div>
+          <span>Vaishnavi's Authentication System</span>
+        </div>
+        <nav class="nav-links">
+          <a href="#" class="active">Overview</a>
+          <a href="#">Security</a>
+          <a href="#">Settings</a>
+        </nav>
+        <button class="primary-btn small" id="logoutButton">Logout</button>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="dashboard-topbar">
+          <div>
+            <p class="eyebrow">Authentication successful</p>
+            <h1 id="welcomeText">Welcome</h1>
+          </div>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="toggle-icon">☀️</span>
+          </button>
+        </header>
+
+        <section class="profile-card">
+          <div class="profile-avatar" id="avatarInitial">U</div>
+          <div class="profile-info">
+            <h2 id="userName">Username</h2>
+            <p id="userEmail">email@example.com</p>
+            <p class="profile-meta" id="loginTimestamp">Logged in just now</p>
+          </div>
+        </section>
+
+        <section class="stats-grid">
+          <article class="stat-card">
+            <h3>Status</h3>
+            <p>Protected session active</p>
+          </article>
+          <article class="stat-card">
+            <h3>Security</h3>
+            <p>Encrypted and validated</p>
+          </article>
+          <article class="stat-card">
+            <h3>Experience</h3>
+            <p>Responsive and premium</p>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="/js/api.js"></script>
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>

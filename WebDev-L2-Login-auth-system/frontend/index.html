@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaishnavi's Authentication System | Login</title>
+    <script>
+      if (window.location.protocol === 'file:') {
+        const page = window.location.pathname.split('/').pop() || 'index.html';
+        const target = page === 'index.html' ? '/' : '/' + page;
+        window.location.href = 'http://127.0.0.1:3000' + target;
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">V</div>
+          <span>Vaishnavi's Authentication System</span>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="toggle-icon">☀️</span>
+        </button>
+      </header>
+
+      <main class="auth-card">
+        <section class="hero-panel">
+          <div class="hero-content">
+            <p class="eyebrow">Secure access, refined experience</p>
+            <h1>Welcome back to your workspace.</h1>
+            <p>
+              Sign in to continue with a polished, secure authentication flow designed for modern products.
+            </p>
+            <ul class="hero-points">
+              <li>Protected sessions</li>
+              <li>Encrypted password handling</li>
+              <li>Responsive onboarding</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="form-panel">
+          <div class="form-card">
+            <div class="form-head">
+              <h2>Login</h2>
+              <p>Use your credentials to continue</p>
+            </div>
+
+            <form id="loginForm" novalidate>
+              <div class="input-group">
+                <label for="identifier">Email or Username</label>
+                <div class="input-shell">
+                  <span class="input-icon">✉️</span>
+                  <input id="identifier" name="identifier" type="text" placeholder="" required />
+                </div>
+                <small class="helper-text" data-error-for="identifier"></small>
+              </div>
+
+              <div class="input-group">
+                <label for="password">Password</label>
+                <div class="input-shell">
+                  <span class="input-icon">🔒</span>
+                  <input id="password" name="password" type="password" placeholder="" required />
+                  <button type="button" class="toggle-password" data-target="password">Show</button>
+                </div>
+                <small class="helper-text" data-error-for="password"></small>
+              </div>
+
+              <div class="options-row">
+                <label class="checkbox-pill">
+                  <input type="checkbox" id="rememberMe" />
+                  <span>Remember me</span>
+                </label>
+                <a href="/forgot-password.html">Forgot password?</a>
+              </div>
+
+              <button class="primary-btn" type="submit" id="loginButton">
+                <span class="btn-text">Sign in</span>
+                <span class="spinner" hidden></span>
+              </button>
+            </form>
+
+            <div class="switch-link">
+              <p>New here? <a href="/register.html">Create an account</a></p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="/js/api.js"></script>
+    <script src="/js/login.js"></script>
+  </body>
+</html>
