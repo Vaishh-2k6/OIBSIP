@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIBSIP | Web Development Projects</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 50px 0;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.12);
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: #cbd5e1;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 18px;
+            padding: 28px;
+            transition: 0.25s;
+            backdrop-filter: blur(8px);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            background: rgba(255,255,255,0.13);
+        }
+
+        .number {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: white;
+            color: #0f172a;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .card h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            line-height: 1.6;
+            min-height: 52px;
+            margin-bottom: 22px;
+        }
+
+        .tech {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            background: white;
+            color: #0f172a;
+            padding: 11px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.03);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="badge">OIBSIP Web Development Internship</div>
+
+        <h1>My Web Development Projects</h1>
+
+        <p class="subtitle">
+            A collection of projects developed during my OIBSIP internship
+            using HTML, CSS and JavaScript.
+        </p>
+    </header>
+
+    <section class="projects">
+
+        <div class="card">
+            <div class="number">01</div>
+            <h2>Calculator Web Application</h2>
+            <p>
+                A responsive calculator that performs basic arithmetic
+                operations with an interactive user interface.
+            </p>
+            <div class="tech">HTML • CSS • JavaScript</div>
+            <a class="btn" href="WebDev-L2-Calculator/">Open Project →</a>
+        </div>
+
+        <div class="card">
+            <div class="number">02</div>
+            <h2>Login Authentication System</h2>
+            <p>
+                A web-based login and authentication project with a
+                frontend and backend structure.
+            </p>
+            <div class="tech">HTML • CSS • JavaScript • Backend</div>
+            <a class="btn" href="WebDev-L2-Login-auth-system/">Open Project →</a>
+        </div>
+
+        <div class="card">
+            <div class="number">03</div>
+            <h2>To-Do Web Application</h2>
+            <p>
+                A task management application for adding, viewing and
+                managing daily tasks.
+            </p>
+            <div class="tech">HTML • CSS • JavaScript</div>
+            <a class="btn" href="WebDev-L2-ToDoWebApp/">Open Project →</a>
+        </div>
+
+        <div class="card">
+            <div class="number">04</div>
+            <h2>Tribute Page</h2>
+            <p>
+                A responsive tribute webpage designed to present
+                information in a clean and visually appealing format.
+            </p>
+            <div class="tech">HTML • CSS • JavaScript</div>
+            <a class="btn" href="WebDev-L2-TributePage/">Open Project →</a>
+        </div>
+
+    </section>
+
+    <footer>
+        OIBSIP Internship Project Portfolio
+    </footer>
+
+</div>
+
+</body>
+</html>
